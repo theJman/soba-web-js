@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	console.log("hello");
+	var input = prompt("Please enter a comma seperated array of grocery items");
+	var arr = input.split(",");
+	arr.sort();
+
+	function forEach(array, action){
+		for (var i = 0; i < array.length; i++) {
+			action(array[i]);
+		}
+	}
+	function createParagraph(text){
+		var body = document.getElementsByTagName("body")[0];
+		body.innerHTML= body.innerHTML + "<p>"+text+"</p>";
+	}
+	forEach(arr,createParagraph);
+</script>
+
+</html>
