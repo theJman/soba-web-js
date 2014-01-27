@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Callback</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+	function longOperation(input) {
+		input.complete(Math.pow(input.num, input.power));
+	}
+
+	longOperation({
+		num: 2,
+		power: 3,
+		complete: function(result) {
+			console.log(result);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	})
+
+</script>
+</html>

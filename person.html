@@ -8,29 +8,64 @@
 	var phil = {
 		name: "Philip Dow",
 		age: 43,
+		sex: "m",
+		weight: 180,
 		printInfo: function() {
-			this.name
-		}
-	}
-
-	function printInfo(person) {
-
-	}
-
-	function longOperation(input) {
-		input.complete(Math.pow(input.num, input.power));
-	}
-
-	longOperation({
-		num: 4,
-		power: 8,
-		complete: function(result) {
-			console.log(result);
+			console.log("Name = "+this.name+"\nAge = "+this.age+"\nSex = "+this.sex+"\nWeight = "+this.weight);
 		},
-		error: function(error) {
-			console.log(error);
+		olderThan: function(friend) {
+			if(!friend.age)
+				throw "Invalid Object";
+			if (friend.age <= this.age) {
+				return true;
+			}
+			return false;
 		}
-	})
+	}
+	var jeremy = {
+		name: "Jeremy Littel",
+		age: 20,
+		sex: "m",
+		weight: 190,
+		printInfo: function() {
+			console.log("Name = "+this.name+"\nAge = "+this.age+"\nSex = "+this.sex+"\nWeight = "+this.weight);
+		},
+		olderThan: function(friend) {
+			if(!friend.age)
+				throw "Invalid Object";
+			if (friend.age <= this.age) {
+				return true;
+			}
+			return false;
+		}
+	}
+	var james = {
+		name: "Philip Dow",
+		weight: 180,
+		printInfo: function() {
+			console.log("Name = "+this.name+"\nAge = "+this.age+"\nSex = "+this.sex+"Weight = "+this.weight);
+		},
+		olderThan: function(friend) {
+			if(!friend.age)
+				throw "Invalid Object";
+			if (friend.age <= this.age) {
+				return true;
+			}
+			return false;
+		}
+	}
+	phil.printInfo();
+	jeremy.printInfo();
+
+	try{
+		jeremy.olderThan(james);
+	}
+	catch(err){
+		console.log(err)
+	}
+
+
+	
 
 </script>
 </body>
