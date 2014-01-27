@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+	function forEach(array, action){
+	for (var i = 0; i < array.length; i++) {
+		action(array[i]);
+	}
+	}
+	function map(funct, array){
+		var newArr = new Array();
+		for (var i = 0; i < array.length; i++) {
+			newArr[i] = funct(array[i]);
+		}
+		return newArr;
+	}
+	function toInt(str){
+		return parseInt(str);
+	}
+	var arr = ["1","2","3","4","5"];
+	console.log(map(toInt, arr));
+</script>
+
+</html>
